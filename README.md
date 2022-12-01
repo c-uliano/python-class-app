@@ -1,2 +1,2 @@
 # Python class algo 
-Adding to it each class
+Basic app we're adding to little by little each class, to learn the basics of Python
