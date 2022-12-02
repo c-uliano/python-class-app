@@ -33,6 +33,7 @@ considerations:
     player can only have 0 to 10 power points.
 """
 
+# update this stuff to be a list of character objects
 name = 'FuzzBall'
 power_points = 1 # minimum = 0, maximum = 10
 can_teleport = True 
@@ -81,3 +82,10 @@ items = [
 
 for i in range(len(items)):
     print(items[i])
+
+"""
+SPECS
+    iterate through a list of characters - build a list of objects, one for each character, update above. Use for loop
+    isolate the action functionality into a function
+    randomly select action
+"""
