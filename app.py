@@ -33,12 +33,34 @@ considerations:
     player can only have 0 to 10 power points.
 """
 
-# update this stuff to be a list of character objects
-name = 'FuzzBall'
-power_points = 1 # minimum = 0, maximum = 10
-can_teleport = True 
+"""
+SPECS
+    // iterate through a list of characters - build a list of objects, one for each character. 
+        // Use for loop
+    isolate the action functionality into a function
+    randomly select action
+"""
 
-print ( f'{name} has {power_points} Power Points and {"can" if can_teleport else "cannot"} teleport' )
+# ? all the characters into a list (array), each element of the list a dictionary (object) for each character
+characters = [
+    {
+        "name": 'FuzzBall',
+        "power_points": 1, # minimum = 0, maximum = 10
+        "can_teleport" : True 
+    },
+    {
+        "name": 'River',
+        "power_points": 8 ,# minimum = 0, maximum = 10
+        "can_teleport": False 
+    }
+]
+
+# ? deconstruct the dictionary (object) so each key is a variable with it's value
+name, power_points, can_teleport = characters.values()
+
+# ? iterate through. So for each character in the characters dictionary it will print all their details
+for character in characters:
+    print ( f'{name} has {power_points} Power Points and {"can" if can_teleport else "cannot"} teleport' )
 
 action = 'teleport' # run, rest, teleport 
 
@@ -83,9 +105,3 @@ items = [
 for i in range(len(items)):
     print(items[i])
 
-"""
-SPECS
-    iterate through a list of characters - build a list of objects, one for each character, update above. Use for loop
-    isolate the action functionality into a function
-    randomly select action
-"""
