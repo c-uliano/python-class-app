@@ -37,11 +37,14 @@ needs to perform actions:
 SPECS
     // iterate through a list of characters - build a list of objects, one for each character. 
         // Use for loop
-    isolate the action functionality into a function
-    randomly select action
+    // isolate the action functionality into a function
+    // randomly select action
 """
 
+# ? action functionality into a function
 # just moved everything into this function
+# ! this stuff was already written out from the first go-around when there was just one character. It never would have occured to me to make this a separate function instead of just adding all this action code into the character for loop
+# ! does this have to be before the for loop because it needs to be above where it's called?
 def characterAction(action, character):
     name, power_points, can_teleport = character.values()
     if action == 'run':
@@ -52,7 +55,7 @@ def characterAction(action, character):
             print ( 'not enough power points to run')
     elif action == 'rest':
         if power_points < 10:
-            print( 'resting' )
+            print( f'{name} is resting' )
             power_points += 1
         else:
             print( 'no rest needed' )
@@ -86,14 +89,15 @@ characters = [
 # ? randomly select an action
 import random
 
-# ? iterate through. So for each character in the characters dictionary it will print all their details
+# ? iterate through. So for each character (for each index) in the characters list it will print all their details
 for character in characters:
-# ? deconstruct the dictionary (object) so each key is a variable with it's value
+    # ? destructuring each dictionary (object) so each key is a variable with it's value
+    # ! if it's destructuring the dictionary then why is it character.values() and not characters.value()?
+    # ! is it because it's destructuring each separate dictionary (object)? characters is a list (array), each element in the list is the dictionary
     name, power_points, can_teleport = character.values()
 
     print ( f'{name} has {power_points} Power Points and {"can" if can_teleport else "cannot"} teleport' )
 
-    # ? action functionality into a function
     # update this to a list of all actions
     actions = [
         'teleport',
