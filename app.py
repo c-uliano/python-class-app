@@ -40,6 +40,8 @@ SPECS
     // isolate the action functionality into a function
     // randomly select action
 """
+# ? import the Character class from the character file
+from character import Character
 
 # ? action functionality into a function
 # just moved everything into this function
