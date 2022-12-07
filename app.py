@@ -91,9 +91,9 @@ import random
 
 # ? iterate through. So for each character (for each index) in the characters list it will print all their details
 for character in characters:
-    # ? destructuring each dictionary (object) so each key is a variable with it's value
+    # ? destructuring each dictionary so each key is a variable with it's value
     # ! if it's destructuring the dictionary then why is it character.values() and not characters.value()?
-    # ! is it because it's destructuring each separate dictionary (object)? characters is a list (array), each element in the list is the dictionary
+    # ! is it because it's destructuring each separate dictionary? characters is a list (array), each element in the list is the dictionary
     name, power_points, can_teleport = character.values()
 
     print ( f'{name} has {power_points} Power Points and {"can" if can_teleport else "cannot"} teleport' )
@@ -106,6 +106,30 @@ for character in characters:
     ]
     # ? pick a random action
     action = random.choice(actions)
+
+    # if action == 'run':
+    #     if power_points > 0:
+    #         power_points -= 1
+    #         print ( f'{name} is running' )
+    #     else:
+    #         print ( 'not enough power points to run')
+    # elif action == 'rest':
+    #     if power_points < 10:
+    #         print( f'{name} is resting' )
+    #         power_points += 1
+    #     else:
+    #         print( 'no rest needed' )
+    # elif action == "teleport":
+    #     if can_teleport:
+    #         if power_points >= 2:
+    #             power_points -= 2
+    #             print(f"{name} is teleporting")
+    #         else:
+    #             print("not enough powerpoints")
+    #     else:
+    #         print('unable to teleport')
+    # else:
+    #     print ( "Invalid Command" )
 
     characterAction(action, character)
 
